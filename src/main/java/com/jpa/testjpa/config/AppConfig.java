@@ -18,8 +18,6 @@ public class AppConfig {
     public UserDetailsService userDetailsService(){
         UserDetails build = User.builder().username("khuram").password(encoder().encode("khuram ")).roles("ADMIN").build();
 
-
-
         return  new InMemoryUserDetailsManager(build);
     }
     @Bean
@@ -27,7 +25,6 @@ public class AppConfig {
 
     return  new BCryptPasswordEncoder( );
     }
-
 
 
     @Bean

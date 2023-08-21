@@ -13,14 +13,17 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CarDto {
     private int id;
-    private String carName;
+    private int addedBuUserId;
+    private String madeBy;
     private String model;
+
     private UserEntity user;
     public CarEntity convertToEntity() {
         CarEntity entity = new CarEntity();
-        entity.setCarName(this.carName);
+        entity.setMadeBy(this.madeBy);
         entity.setModel(this.model);
         entity.setUser(this.user);
+        entity.setAddedByUserId(this.addedBuUserId);
         return entity;
     }
 

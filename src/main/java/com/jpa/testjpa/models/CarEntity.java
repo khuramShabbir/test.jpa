@@ -1,7 +1,6 @@
 package com.jpa.testjpa.models;
 
 import com.jpa.testjpa.dto.CarDto;
-import com.jpa.testjpa.dto.UserDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,24 +12,34 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "cars")
-
 public class CarEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "car_id")
+//    @Column(name = "car_id")
     private int id;
-    private String carName;
+    private int addedByUserId;
+    private String madeBy;
     private String model;
-    @ManyToOne
-    @JoinColumn(name = "id") // The foreign key column in Car table
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private UserEntity user;
 
     public CarDto convertToDto() {
         CarDto dto = new CarDto();
-        dto.setCarName(this.carName);
+        dto.setMadeBy(this.madeBy);
         dto.setModel(this.model);
+        dto.setAddedBuUserId(this.addedByUserId);
         dto.setUser(this.user);
         return dto;
+    }
+
+    public CarEntity saveCar(CarEntity entity){
+        CarEntity carEntity=new CarEntity();
+        carEntity.setMadeBy(entity.getMadeBy());
+        carEntity.setModel(entity.getModel());
+        carEntity.setUser(entity.getUser());
+        return carEntity;
     }
 
 }

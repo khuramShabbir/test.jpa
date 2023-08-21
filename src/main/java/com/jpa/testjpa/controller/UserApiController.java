@@ -5,6 +5,7 @@ import com.jpa.testjpa.dto.UserDto;
 import com.jpa.testjpa.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController()
 public class UserApiController {
