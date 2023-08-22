@@ -16,6 +16,7 @@ import java.util.Optional;
 public interface CarRepo extends JpaRepository<CarEntity, Integer> {
 
     List<CarEntity> findByUserId(int id);
+//    List<CarEntity> findByUserMobileNumber(String mobileNumber);
 
 
 

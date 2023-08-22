@@ -1,6 +1,7 @@
 package com.jpa.testjpa.models;
 
 import lombok.*;
+import org.springframework.http.HttpStatus;
 
 @Getter
 @Setter
@@ -9,6 +10,9 @@ import lombok.*;
 @Builder
 @ToString
 public class JwtResponse {
+    private String message;
+    private int status;
     private  String token;
-    private  String mobileNumber;
+    private  UserEntity userEntity;
+
 }

@@ -27,7 +27,7 @@ public class CarEntity {
 
     public CarDto convertToDto() {
         CarDto dto = new CarDto();
-        dto.setMadeBy(this.madeBy);
+        dto.setCarName(this.madeBy);
         dto.setModel(this.model);
         dto.setAddedBuUserId(this.addedByUserId);
         dto.setUser(this.user);

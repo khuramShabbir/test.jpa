@@ -2,6 +2,7 @@ package com.jpa.testjpa.controller;
 
 import com.jpa.testjpa.ResponseEntity;
 import com.jpa.testjpa.dto.UserDto;
+import com.jpa.testjpa.models.JwtResponse;
 import com.jpa.testjpa.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UserApiController {
 
     @PostMapping("/auth")
     @ResponseBody
-    public ResponseEntity createOrGetUser(@RequestBody UserDto dto) {
+    public JwtResponse createOrGetUser(@RequestBody UserDto dto) {
         return userServices.createOrGetUser(dto);
     }
 
