@@ -31,7 +31,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/auth", "/", "/addCar","/getCar","/getAllCars").permitAll() // Allow access without token
+                                .requestMatchers("/auth", "/","/getCar","/getAllCars").permitAll() // Allow access without token
                                 .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> {
