@@ -14,12 +14,7 @@
     <name>test.jpa</name>
     <description>test.jpa</description>
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <!--  Use the release flag only if you are using Java 9+  -->
-        <!--  <maven.compiler.release>8</maven.compiler.release>  -->
-        <!-- verbose is useful for debugging purposes -->
-        <maven.compiler.verbose>true</maven.compiler.verbose>
+        <java.version>20</java.version>
     </properties>
     <dependencies>
         <dependency>
