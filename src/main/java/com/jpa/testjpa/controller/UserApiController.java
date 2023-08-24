@@ -22,8 +22,23 @@ public class UserApiController {
 
     @PostMapping("/auth")
     @ResponseBody
-    public JwtResponse createOrGetUser(@RequestBody UserDto dto) {
-        return userServices.createOrGetUser(dto);
+    public JwtResponse createOrGetUser(
+            @RequestParam("name") String name,
+            @RequestParam("phoneNumber") String phoneNumber,
+            @RequestParam("emailId") String emailId,
+            @RequestParam("googleId") String googleId,
+            @RequestParam("appleId") String appleId
+//            @RequestParam("image") String image,
+//            @RequestParam("file") MultipartFile file
+    ) {
+        System.out.println(name+emailId+googleId+appleId);
+        UserDto userDto = new UserDto();
+        userDto.setName(name);
+        userDto.setEmailID(emailId);
+        userDto.setPhoneNumber(phoneNumber);
+        userDto.setGoogleID(googleId);
+        userDto.setAppleID(appleId);
+        return userServices.createOrGetUser(userDto);
     }
 
 }
